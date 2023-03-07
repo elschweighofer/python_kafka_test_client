@@ -22,6 +22,6 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image 
-      run: docker build . --file Dockerfile --tag Sse22m055/python_kafka_test_client:$(date +%5)
+      run: docker build . --file Dockerfile --tag se22m055/python_kafka_test_client:$(date +%5)
     - name: Docker Push
       run: docker push ${{secrets .DOCKER_USER}} /python_kafka_test_client
